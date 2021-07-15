@@ -1,0 +1,6 @@
+<view class="container">
+<image src="{{userInfo.avatarUrl}}" class="userAvatar"></image>
+<text class="userName">{{userInfo.nickName}}</text>
+<button bindtap="getUserData" type="primary" wx:if="{{!isAccredit}}">点击授权</button>
+<button catchtap="toLogs" class="jump">去哪里</button>
+</view>

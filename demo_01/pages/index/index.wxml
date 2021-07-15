@@ -1,10 +1,40 @@
-<!--pages/index/index.wxml-->
 <view class="container">
-<image src="/static/images/nvsheng.jpg" class="userAvatar"></image>
-<text class="userName">{{msg}}</text>
-<!-- <text>Hell World!</text> -->
-<!-- <text>{{msg}}</text> -->
-<view catchtap="parentClick" class="parent">
-  <button catchtap="toLogs">点我呀</button>
-</view>
+  <!-- 轮播图区域 -->
+  <swiper class="banner" indicator-dots indicator-color='ivory' indicator-active-color='#d43c33' autoplay circular>
+    <swiper-item>
+      <image src="/static/images/nvsheng.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/static/images/nvsheng.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/static/images/nvsheng.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/static/images/nvsheng.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 导航栏区域 -->
+  <view class="nav-container">
+    <view class="nav-item">
+      <text class="iconfont icon-meirituijian- icon"></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="nav-item">
+      <text class="iconfont icon-meirituijian- icon"></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="nav-item">
+      <text class="iconfont icon-meirituijian- icon"></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="nav-item">
+      <text class="iconfont icon-meirituijian- icon"></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="nav-item">
+      <text class="iconfont icon-zhibobofangshexiangjitianxianxianxing icon"></text>
+      <text>每日推荐</text>
+    </view>
+  </view>
 </view>

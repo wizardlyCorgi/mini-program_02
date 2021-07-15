@@ -1,20 +1,43 @@
-// pages/logs/logs.js
+// pages/index/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    msg:'你好鸭!',
+    userInfo:{},
+    isAccredit:false
   },
-
+  
+  toLogs(){
+    wx.navigateTo({
+      url: '/pages/logs/logs',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
   },
-
+  // 按钮获取用户信息
+  getUserData(res){
+    wx.getUserProfile({
+      desc:'调试',
+      success:(res)=>{
+        // console.log(res);
+        const userInfo=res.userInfo
+        this.setData({
+          userInfo,
+          isAccredit:true
+        })
+      },
+      fail:(err)=>{
+        // console.log(err);
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

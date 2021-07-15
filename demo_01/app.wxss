@@ -1,23 +1,5 @@
-/* 全局的通用样式 */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 50rpx;
-}
-.userAvatar {
-  height: 200rpx;
-  width: 200rpx;
-}
-.userName {
-  margin-top: 50rpx;
-  margin-bottom: 50rpx;
-}
-.parent {
-  background-color: red;
-  height: 200rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* 全局的样式 */
+@import '/static/iconfont/iconfont.wxss';
+page {
+  height: 100%;
 }
