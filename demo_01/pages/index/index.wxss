@@ -31,5 +31,5 @@ image {
   color: #ffffff;
 }
 .nav-item text {
-  font-size: 20rpxx;
+  font-size: 20rpx;
 }
