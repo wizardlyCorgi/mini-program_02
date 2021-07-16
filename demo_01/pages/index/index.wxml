@@ -1,17 +1,8 @@
 <view class="container">
   <!-- 轮播图区域 -->
   <swiper class="banner" indicator-dots indicator-color='ivory' indicator-active-color='#d43c33' autoplay circular>
-    <swiper-item>
-      <image src="/static/images/nvsheng.jpg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="/static/images/nvsheng.jpg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="/static/images/nvsheng.jpg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="/static/images/nvsheng.jpg"></image>
+    <swiper-item wx:for="{{bannerArray}}" wx:key="index">
+      <image src="{{item.pic}}"></image>
     </swiper-item>
   </swiper>
   <!-- 导航栏区域 -->
@@ -36,5 +27,19 @@
       <text class="iconfont icon-zhibobofangshexiangjitianxianxianxing icon"></text>
       <text>每日推荐</text>
     </view>
+  </view>
+  <!-- 推荐区域 -->
+  <view class="recommend">
+    <view class="headline">推荐歌曲</view>
+    <view class="title">
+      <text class="title-text">为你精心推荐</text>
+      <text class="title-btn">查看更多</text>
+    </view>
+    <scroll-view class="recommend-items" enable-flex scroll-x>
+      <view class="recommend-item" wx:for="{{8}}" wx:key="index" >
+        <image src="/static/images/nvsheng.jpg"></image>
+        <text>斯人若彩虹,遇上方知有,遇到彩虹,吃定彩虹</text>
+      </view>
+    </scroll-view>
   </view>
 </view>

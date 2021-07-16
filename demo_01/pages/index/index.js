@@ -4,14 +4,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    bannerArray:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    wx.request({
+      url: 'http://localhost:3000/banner',
+      data: {
+        type:2
+      },
+      success: (res) => {
+        console.log(res);
+        const bannerArray=res.data.banners
+        this.setData({
+          bannerArray
+        })
+      },
+      fail: (err) => {
+        console.log(err);
+      }
+    })
   },
 
   /**
