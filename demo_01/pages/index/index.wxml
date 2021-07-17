@@ -1,7 +1,7 @@
 <view class="container">
   <!-- 轮播图区域 -->
   <swiper class="banner" indicator-dots indicator-color='ivory' indicator-active-color='#d43c33' autoplay circular>
-    <swiper-item wx:for="{{bannerArray}}" wx:key="index">
+    <swiper-item wx:for="{{bannerArray}}" wx:key="targetId">
       <image src="{{item.pic}}"></image>
     </swiper-item>
   </swiper>
@@ -30,16 +30,30 @@
   </view>
   <!-- 推荐区域 -->
   <view class="recommend">
-    <view class="headline">推荐歌曲</view>
-    <view class="title">
-      <text class="title-text">为你精心推荐</text>
-      <text class="title-btn">查看更多</text>
-    </view>
+    <!-- 头部区域 -->
+    <navComponent title='推荐歌曲' text='为你精心推荐' />
+    <!-- 内容区域 -->
     <scroll-view class="recommend-items" enable-flex scroll-x>
-      <view class="recommend-item" wx:for="{{8}}" wx:key="index" >
-        <image src="/static/images/nvsheng.jpg"></image>
-        <text>斯人若彩虹,遇上方知有,遇到彩虹,吃定彩虹</text>
+      <view class="recommend-item" wx:for="{{recommendList}}" wx:key="id" wx:for-item='recommendItem'>
+        <image src="{{recommendItem.picUrl}}"></image>
+        <text>{{recommendItem.name}}</text>
       </view>
     </scroll-view>
+  </view>
+  <!-- 热门榜单 -->
+  <view class="top-list">
+   <!-- 头部区域 -->
+   <navComponent title='排行榜' text='热歌风向标' />
+   <!-- 内容区域 -->
+   <swiper class="topListSwiper" next-margin='50rpx' autoplay circular >
+   <swiper-item wx:for="{{topList}}" class="topListSwiperItem"  wx:key='name'>
+   <view class="title">{{item.name}}</view>
+   <view class="music" wx:for="{{item.itemArr}}" wx:for-item='musicItem' wx:key='id'>
+   <image src="{{musicItem.al.picUrl}}"></image>
+   <text class="count">{{index+1}}</text>
+   <text class="musicName">{{musicItem.name}}</text>
+   </view>
+   </swiper-item>
+   </swiper>
   </view>
 </view>
