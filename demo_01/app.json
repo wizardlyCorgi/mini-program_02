@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/personal/personal",
     "pages/index/index",
     "pages/video/video"
@@ -12,8 +13,8 @@
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "tabBar": {
-    "color":"#333",
-    "selectedColor":"#d43c33",
+    "color": "#333",
+    "selectedColor": "#d43c33",
     "backgroundColor": "#fff",
     "list": [
       {

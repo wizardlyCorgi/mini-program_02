@@ -20,7 +20,6 @@ Page({
   },
   // 手指滑动开始事件
   handleTouchStart(event) {
-    console.log(event,'开始');
     // 一进来把过渡效果清空,保证只有下拉的时候有效果
     this.setData({
       coveTransition: ''
@@ -31,7 +30,6 @@ Page({
   },
   // 手指滑动事件
   handleTouchMove(event) {
-    console.log(event,'ing');
     moveY = event.touches[0].clientY
     moveDistance = moveY - startY
     // 限制往不能上滑的交互
@@ -49,7 +47,6 @@ Page({
   },
   // 滑动结束事件
   handleTouchEnd(event) {
-    console.log(event,'结束');
     // 滑动结束回到起点,利用css3的过渡效果
     // 动态更新coverTransform的状态值
     this.setData({
