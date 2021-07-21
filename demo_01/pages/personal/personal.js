@@ -2,6 +2,7 @@
 let startY = 0; // 开始距顶部的距离(手指起始的坐标)
 let moveY = 0;// 结束距顶部距离(手指移动的坐标)
 let moveDistance = 0;// 移动的距离
+import request from "../../utils/request";
 Page({
 
   /**
@@ -10,13 +11,33 @@ Page({
   data: {
     coverTransform: 'translateY(0)',// 过渡的距离
     coveTransition: '',// 过渡动画效果
+    userInfo: {},
+    recentPlayList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let userInfo = wx.getStorageSync('userInfo')
+    if (userInfo) {
+      this.setData({
+        userInfo: JSON.parse(userInfo)
+      })
+      this.getRecentPlayList(this.data.userInfo.userId)
+    }
+  },
+  // 获取最近播放的数据
+  async getRecentPlayList(userId) {
+    let recentPlayListData = await request('/user/record', { uid: userId, type: 0 })
+    let index = 0
+    let recentPlayList = recentPlayListData.allData.splice(0, 10).map(i => {
+      i.id = index++
+      return i
+    })
+    this.setData({
+      recentPlayList
+    })
   },
   // 手指滑动开始事件
   handleTouchStart(event) {
@@ -52,6 +73,12 @@ Page({
     this.setData({
       coverTransform: `translateY(0rpx)`,
       coveTransition: 'transform 1s linear'
+    })
+  },
+  // 去登陆页
+  toLogin() {
+    wx.navigateTo({
+      url: '/pages/login/login',
     })
   },
   /**

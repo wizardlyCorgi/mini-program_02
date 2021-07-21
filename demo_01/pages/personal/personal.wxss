@@ -225,3 +225,7 @@
   height: 200rpx;
   border-radius: 10rpx;
 }
+.no-data {
+  font-size: 20rpx;
+ text-align: center;
+}

@@ -8,11 +8,11 @@
     <view class="input-content">
       <view class="input-item">
         <text class="tit">手机号码</text>
-        <input  type="text" placeholder="请输入手机号码" data-test="abc" data-type="phone" id="phone" bindinput="handleInput"/>
+        <input  type="text" placeholder="请输入手机号码" data-type="phone" id="phone" bindinput="handleInput"/>
       </view>
       <view class="input-item">
         <text class="tit">密码</text>
-        <input type="password"  placeholder="请输入密码" data-test="abc" data-type="password" id="password" bindinput="handleInput"/>
+        <input type="text"  placeholder="请输入密码" data-type="password" password id="password" bindinput="handleInput"/>
       </view>
     </view>
     <button class="confirm-btn" bindtap="login">登录</button>
