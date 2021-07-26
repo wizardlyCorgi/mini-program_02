@@ -55,8 +55,9 @@ Page({
       })
       return
     }
+    let needLogin=true
     // 后端验证
-    let res=await request('/login/cellphone',{phone,password})
+    let res=await request('/login/cellphone',{phone,password,needLogin})
     if (res.code===200) {
       wx.showToast({
       title: '登陆成功'

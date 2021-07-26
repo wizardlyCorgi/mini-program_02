@@ -6,8 +6,14 @@ export default (url, data = {}, method = 'GET')=>{
       url: config.host + url,
       data,
       method,
+      header:{
+        cookie:wx.getStorageSync('cookies')?wx.getStorageSync('cookies').find(item=>item.indexOf('MUSIC_U') !== -1):''
+      },
       success: (res) => {
         // resolve修改promise的状态为成功状态 resolved
+        if (data.needLogin) {
+          wx.setStorageSync('cookies',res.cookies)
+        }
         resolve(res.data)
       },
       fail: (err) => {
