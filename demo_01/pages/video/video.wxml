@@ -14,7 +14,14 @@
     </view>
   </scroll-view>
   <!-- 视频列表区域 -->
-  <scroll-view scroll-y class="videoScroll" >
+  <scroll-view 
+  scroll-y 
+  class="videoScroll" 
+  refresher-enabled 
+  bindrefresherrefresh='handelRefresh'
+   refresher-triggered='{{isTriggered}}'
+   bindscrolltolower='handelLower'
+   >
     <view class="videoItem" wx:for="{{videoGroupDetailData}}" wx:key='id'>
       <video 
       class="common"

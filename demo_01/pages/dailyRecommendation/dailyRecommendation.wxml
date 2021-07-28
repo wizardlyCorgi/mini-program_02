@@ -1,0 +1,27 @@
+<view class="recommendationContainer">
+<!-- 头部区域 -->
+<view class="header">
+<image src="/static/images/recommendSong/recommendSong.jpg"></image>
+<view class="date">
+<text class="day">{{day}} /</text>
+<text class="month"> {{month}}</text>
+</view>
+</view>
+<!-- 内容区域 -->
+<view class="content" >
+<view class="contentHeader">
+<text class="playAll">播放全部</text>
+<text class="multiple">多选</text>
+</view>
+<scroll-view class="contentList" scroll-y>
+<view class="contentListItem" wx:for="{{20}}">
+<image src="/static/images/nvsheng.jpg"></image>
+<view class="text">
+<text class="songName">稻香</text>
+<text class="songArtist">jay choujay chojay chojay chojay chojay chojay chojay chojay cho</text>
+</view>
+<text class="iconfont icon-gengduo"></text>
+</view>
+</scroll-view>
+</view>
+</view>

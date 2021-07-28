@@ -10,7 +10,8 @@ Page({
     navId: '',//导航对应的id
     videoGroupDetailData: [],//视频详情数据 
     videoId: '',// 记录当前视频的id
-    timeUpdateArr: []// 储存视频的当前播放时间
+    timeUpdateArr: [],// 储存视频的当前播放时间
+    isTriggered:false,// 是否下拉
   },
 
   /**
@@ -49,10 +50,11 @@ Page({
       item.id = index++
       return item
     })
-    this.setData({
-      videoGroupDetailData
-    })
     wx.hideLoading()
+    this.setData({
+      videoGroupDetailData,
+      isTriggered:false// 下拉回弹更新数据
+    })
     // console.log(videoGroupDetail,'videoGroupDetail');
   },
   // 视频播放/继续播放的回调函数
@@ -88,7 +90,7 @@ Page({
     // console.log(timeUpdateArr,'timeUpdateArr');
     // 存储到数组中去
     // 判断
-    // 1,是否已经有这个数组了,有的处理方法,没有的处理方法
+    // 1,是否已经有这个元素了,有的处理方法,没有的处理方法
     // 有就不继续添加元素,应该更新当前的时间(找到这个项的数组下标)
     let updateItem = timeUpdateArr.find(item => item.vid === timeUpdateItem.vid)
     if (updateItem) {
@@ -110,6 +112,17 @@ Page({
     this.setData({
       timeUpdateArr
     })
+  },
+  // 下拉刷新回调
+  handelRefresh(){
+    // 再次调用接口获取数据
+    this.getVideoGroupDetail(this.data.navId)
+  },
+  // 上拉触底加载
+  handelLower(){
+    console.log('我上拉了');
+    // 添加数据到videoGroupDetailData
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -155,8 +168,9 @@ Page({
 
   /**
    * 用户点击右上角分享
+   * 如果不写,右上角三个点分享功能失效
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function ({from}) {
+    console.log(from);
   }
 })
