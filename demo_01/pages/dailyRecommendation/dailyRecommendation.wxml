@@ -14,11 +14,11 @@
 <text class="multiple">多选</text>
 </view>
 <scroll-view class="contentList" scroll-y>
-<view class="contentListItem" wx:for="{{20}}">
-<image src="/static/images/nvsheng.jpg"></image>
+<view class="contentListItem" wx:for="{{recommendationList}}" wx:key='id'>
+<image src="{{item.album.picUrl}}"></image>
 <view class="text">
-<text class="songName">稻香</text>
-<text class="songArtist">jay choujay chojay chojay chojay chojay chojay chojay chojay cho</text>
+<text class="songName">{{item.name}}</text>
+<text class="songArtist">{{item.artists[0].name}}</text>
 </view>
 <text class="iconfont icon-gengduo"></text>
 </view>

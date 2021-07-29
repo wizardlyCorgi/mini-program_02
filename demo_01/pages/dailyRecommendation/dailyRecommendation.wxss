@@ -62,13 +62,14 @@ float: right;
   display: flex;
   flex-direction: column;
   margin-left: 20rpx;
+  font-size: 24rpx;
 }
 .contentList .contentListItem .songArtist {
   max-width: 500rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  height: 40rpx;
+  /* height: 40rpx; */
   line-height: 40rpx;
 }
 .contentList .contentListItem image {

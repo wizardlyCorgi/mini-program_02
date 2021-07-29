@@ -1,0 +1,11 @@
+<view class="songsDetailContainer">
+  <view class="artist">五月天</view>
+  <!-- 摇杆 -->
+  <view class="circle"></view>
+  <image src="/static/images/song/needle.png" class="needle {{isPlay?'needleTrans':''}}"></image>
+  <!-- 碟片 -->
+  <view class="discContainer">
+    <image src="/static/images/song/disc.png" class="disc"></image>
+    <image src="/static/images/nvsheng.jpg" class="musicImg"></image>
+  </view>
+</view> 
