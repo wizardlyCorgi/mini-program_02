@@ -46,7 +46,15 @@ this.setData({
   recommendationList:recommendation.recommend
 })
   },
-
+// 路由跳转到歌曲详情
+toSongDetails(event){
+  // 获取事件对象传入的item中的id
+  let musicId=event.currentTarget.dataset.song.id
+  // 跳转歌曲详情页面并带上参数id
+  wx.navigateTo({
+    url: '/pages/songsDetail/songsDetail?songId='+musicId,
+  })
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,11 +1,24 @@
 <view class="songsDetailContainer">
-  <view class="artist">五月天</view>
+  <view class="artist">{{detailsData.ar[0].name}}</view>
   <!-- 摇杆 -->
   <view class="circle"></view>
-  <image src="/static/images/song/needle.png" class="needle {{isPlay?'needleTrans':''}}"></image>
+  <image src="/static/images/song/needle.png" class="needle {{isPlay?'needleTrans':''}}  "></image>
+    <!-- isPlay&&'needleTrans'  这种写法代替三元表达式-->
   <!-- 碟片 -->
   <view class="discContainer">
-    <image src="/static/images/song/disc.png" class="disc"></image>
-    <image src="/static/images/nvsheng.jpg" class="musicImg"></image>
+    <image src="/static/images/song/disc.png" class="disc "></image>
+    <image src="{{detailsData.al.picUrl}}" class="musicImg {{isPlay&&'discAnimation'}}"></image>
+  </view>
+  <!-- 底部播放控制区域 -->
+  <view class="musicControl">
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle"></text>
+
+    <text class="iconfont icon-shangyishou" id="pre" bindtap="handleSwitch"></text>
+
+    <text class="iconfont {{isPlay?'icon-zanting': 'icon-bofang'}} big" bindtap="handleMusicPlay"></text>
+
+    <text class="iconfont icon-next" id="next" bindtap="handleSwitch"></text>
+
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
   </view>
 </view> 

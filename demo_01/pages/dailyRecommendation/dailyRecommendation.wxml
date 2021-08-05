@@ -14,7 +14,7 @@
 <text class="multiple">多选</text>
 </view>
 <scroll-view class="contentList" scroll-y>
-<view class="contentListItem" wx:for="{{recommendationList}}" wx:key='id'>
+<view class="contentListItem" wx:for="{{recommendationList}}" wx:key='id' data-song='{{item}}' bindtap="toSongDetails">
 <image src="{{item.album.picUrl}}"></image>
 <view class="text">
 <text class="songName">{{item.name}}</text>

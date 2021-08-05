@@ -25,12 +25,29 @@
   height: 274rpx;
   top: -30rpx;
   left: 60rpx;
+  /* 旋转的中心点设置 */
   transform-origin: 40rpx 0;
+  /* 旋转角度 */
   transform: rotate(-20deg);
+  /* 过渡效果,视觉效果更好 */
   transition: transform 1s;
 }
 .needleTrans {
   transform: rotate(0);
+}
+.discAnimation {
+  /* animation: 动画名称 时间 平滑 无限循环 */
+  animation: disc 4s linear infinite;
+  /* 动画延迟 */
+  animation-delay: 1s;
+}
+@keyframes disc {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .discContainer {
   position: relative;
@@ -45,6 +62,7 @@
 .musicImg {
   width: 370rpx;
   height: 370rpx;
+  /* 子元素在父元素中垂直居中 */
   position: absolute;
   top: 0;
   right: 0;
@@ -52,4 +70,24 @@
   left: 0;
   margin: auto;
  border-radius: 50%;
+}
+/* 底部播放控制区域 */
+.musicControl{
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  border-top: 1rpx solid #fff;
+}
+.musicControl text {
+  font-size: 50rpx;
+  width: 20%;
+  text-align: center;
+  height: 120rpx;
+  line-height: 120rpx;
+  color: #fff;
+}
+.musicControl text.big {
+  font-size: 80rpx;
 }
