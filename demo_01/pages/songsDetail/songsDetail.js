@@ -30,13 +30,10 @@ Page({
       this.setData({
         isPlay: true
       })
-    }
-    else {
-      // console.log(111);
+    }else {
        // 进来就播放这首歌
     this.musicPlay(true, musicId)
     this.backgroundAudioManager.play()
-    // console.log(232);
     }
     
     // 监听播放事件
@@ -58,7 +55,6 @@ Page({
     }),
       // 监听关闭事件
       this.backgroundAudioManager.onEnded(() => {
-        console.log('我结束了');
         //  切换下一首歌
         // 发布type类型
         PubSub.publish('songDetailType', 'next')
@@ -126,9 +122,9 @@ Page({
        // 赋值必填属性title给背景音频实例对象
        this.backgroundAudioManager.title = this.data.detailsData.name
        
-       console.log(musicUrl);
-       console.log(this.backgroundAudioManager);
-       console.log(this.backgroundAudioManager.src,11);
+      //  console.log(musicUrl);
+      //  console.log(this.backgroundAudioManager);
+      //  console.log(this.backgroundAudioManager.src,11);
       // if (!this.data.musicUrl) {
       //   // 停止播放歌曲
       //   this.backgroundAudioManager.stop()
