@@ -3,16 +3,25 @@
   <!-- 摇杆 -->
   <view class="circle"></view>
   <image src="/static/images/song/needle.png" class="needle {{isPlay?'needleTrans':''}}  "></image>
-    <!-- isPlay&&'needleTrans'  这种写法代替三元表达式-->
+  <!-- isPlay&&'needleTrans'  这种写法代替三元表达式-->
   <!-- 碟片 -->
   <view class="discContainer">
     <image src="/static/images/song/disc.png" class="disc "></image>
     <image src="{{detailsData.al.picUrl}}" class="musicImg {{isPlay&&'discAnimation'}}"></image>
   </view>
+  <!-- 进度条区域 -->
+  <view class="progressLine">
+  <text>{{currentTime}}</text>
+  <view class="line">
+  <view class="red-line" style="width:{{currentWidth + 'rpx'}}">
+    <view class="line-circle" longtap='handleMove'></view>
+  </view>
+  </view>
+  <text>{{durationTime}}</text>
+  </view>
   <!-- 底部播放控制区域 -->
   <view class="musicControl">
     <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle"></text>
-
     <text class="iconfont icon-shangyishou" id="pre" bindtap="handleSwitch"></text>
 
     <text class="iconfont {{isPlay?'icon-zanting': 'icon-bofang'}} big" bindtap="handleMusicPlay"></text>
@@ -21,4 +30,4 @@
 
     <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
   </view>
-</view> 
+</view>
