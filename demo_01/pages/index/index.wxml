@@ -7,7 +7,7 @@
   </swiper>
   <!-- 导航栏区域 -->
   <view class="nav-container">
-    <view class="nav-item">
+    <view class="nav-item" bindtap="toRecommend">
       <text class="iconfont icon-meirituijian- icon"></text>
       <text>每日推荐</text>
     </view>

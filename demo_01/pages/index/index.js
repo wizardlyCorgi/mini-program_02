@@ -43,7 +43,12 @@ Page({
     }
     
   },
-
+// 跳转每日推荐页面
+toRecommend(){
+  wx.navigateTo({
+    url: '/pages/dailyRecommendation/dailyRecommendation',
+  })
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
