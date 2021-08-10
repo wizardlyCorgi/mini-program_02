@@ -1,7 +1,7 @@
 // pages/songsDetail/songsDetail.js
 import PubSub from 'pubsub-js'
 import moment from 'moment'
-import request from "../../utils/request";
+import request from "../../../utils/request";
 const appInstance = getApp()
 Page({
 

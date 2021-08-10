@@ -46,7 +46,7 @@ Page({
 // 跳转每日推荐页面
 toRecommend(){
   wx.navigateTo({
-    url: '/pages/dailyRecommendation/dailyRecommendation',
+    url: '/songPackage/pages/dailyRecommendation/dailyRecommendation',
   })
 },
   /**

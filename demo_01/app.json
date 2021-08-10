@@ -1,9 +1,7 @@
 {
   "pages": [
-    "pages/search/search",
     "pages/index/index",
-    "pages/dailyRecommendation/dailyRecommendation",
-    "pages/songsDetail/songsDetail",
+    "pages/search/search",
     "pages/video/video",
     "pages/personal/personal",
     "pages/login/login"
@@ -42,5 +40,20 @@
         "selectedIconPath": "/static/images/tabs/tab-my-current.png"
       }
     ]
+  },
+  "subpackages": [
+    {
+      "root": "songPackage",
+      "pages": [
+        "pages/dailyRecommendation/dailyRecommendation",
+        "pages/songsDetail/songsDetail"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": ["songPackage"]
+    }
   }
 }

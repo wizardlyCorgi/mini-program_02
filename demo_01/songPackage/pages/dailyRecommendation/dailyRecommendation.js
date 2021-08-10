@@ -1,5 +1,5 @@
 import PubSub from 'pubsub-js'
-import request from "../../utils/request";
+import request from "../../../utils/request";
 // pages/dailyRecommendation/dailyRecommendation.js
 Page({
 
@@ -78,7 +78,7 @@ Page({
     })
     // 跳转歌曲详情页面并带上参数id
     wx.navigateTo({
-      url: '/pages/songsDetail/songsDetail?songId=' + musicId,
+      url: '/songPackage/pages/songsDetail/songsDetail?songId=' + musicId,
     })
   },
   /**

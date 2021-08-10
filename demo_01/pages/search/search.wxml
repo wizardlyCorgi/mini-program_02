@@ -5,7 +5,7 @@
       <text class="iconfont  searchIcon icon-search1"></text>
       <input type="text" placeholder="{{placeholderContent}}" placeholder-class="placeholder" bindinput="handleInput" />
     </view>
-    <view class="cancel">取消</view>
+    <view class="cancel" bindtap="canselSearch">取消</view>
   </view>
   <!-- 搜索列表 -->
   <block wx:if="{{keyWordsData.length>0}}">
@@ -27,7 +27,11 @@
  <view class="history">
     <view class="title">历史记录</view>
    <view class="historyList">
-    <view class="historyItem" wx:for="{{10}}">你好,还是</view></view>
+   <!-- 搜索之后存储到storage中 -->
+   <!-- 获取存储本地的历史记录数组,渲染在页面 -->
+   <!-- 当没有历史记录的时候,隐藏该盒子 -->
+    <view class="historyItem" wx:for="{{10}}">你好</view></view>
+    <!-- 清空历史记录 -->
     <view class="iconfont icon-shanchu delete"></view>
   </view>
     <!-- 热搜榜区域 -->

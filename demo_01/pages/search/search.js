@@ -65,6 +65,13 @@ Page({
     }, 300)
 
   },
+  // 取消搜索
+  canselSearch(){
+    // 跳回视频页面
+    // this.setData({
+    //   keyWordsData: []
+    // })
+  },
   // 获取关键词搜索数据
   async getKeyWordsData() {
     let keywords = this.data.keyWords
